@@ -4,15 +4,18 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Trash2 } from 'lucide-react';
 
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 const deleteChat = async (chatId) => {
-  const res = await fetch(`/api/chats/${chatId}`, {
+  const res = await fetch(`${API_URL}/chats/${chatId}`, {
     method: 'DELETE',
   });
   if (!res.ok) throw new Error('Error al borrar el chat');
 };
 
 const getChatList = async () => {
-  const res = await fetch('/api/chats');
+  const res = await fetch(`${API_URL}/chats`);
   if (!res.ok) throw new Error('Error al cargar la lista de chats');
   return res.json();
 };
