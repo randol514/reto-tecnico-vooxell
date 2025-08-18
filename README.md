@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🗨️ Chat Web App
 
-## Getting Started
+## 📌 Objetivo del Proyecto
 
-First, run the development server:
+Desarrollar una aplicación web con chat integrado, donde los usuarios puedan:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Realizar consultas sobre la empresa.
+- Enviar archivos (imágenes, videos, documentos).
+- Revisar historiales de conversaciones.
+- Continuar chats previos.
+
+La aplicación está construida con una arquitectura moderna basada en **Next.js 15** y un stack actualizado de herramientas asociadas.
+
+---
+
+## 🚀 Funcionalidades Principales
+
+### 💬 Chat Interactivo
+
+- Los usuarios pueden iniciar un nuevo chat y realizar consultas de forma libre.
+- Las respuestas se generan a través de una **API externa simulada** (mockeada con **MSW**).
+- Soporte para adjuntar archivos:
+  - **Imágenes (JPG, PNG):** Se renderizan directamente en el chat.
+  - **Videos (MP4) y documentos (PDF):** Se muestran como enlaces para descarga.
+
+### 📜 Historial de Chats
+
+- Visualización del historial completo de chats.
+- Cada entrada del historial permite ver todo el contenido previo.
+- Opción de **continuar una conversación** desde el punto en que se dejó.
+
+### 🔎 Búsqueda en Historial
+
+- Búsqueda de conversaciones dentro del historial.
+- Resultados basados en coincidencias textuales con los mensajes.
+
+### 🗑️ Gestión de Conversaciones
+
+- Los usuarios pueden eliminar cualquier conversación del historial.
+
+---
+
+## ⚙️ Requisitos Técnicos
+
+- **Framework:** [Next.js 15](https://nextjs.org/)
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/)
+- **Componentes UI:** [ShadCN UI](https://ui.shadcn.com/)
+- **Cliente de datos:** [React Query](https://tanstack.com/query/latest)
+- **Mock de APIs:** [MSW (Mock Service Worker)](https://mswjs.io/)
+- **Gestor de paquetes:** [pnpm](https://pnpm.io/)
+- **Variables de entorno:** Configuración de endpoints y opciones sensibles.
+- **Hooks personalizados:** Para la lógica de negocio y manejo de datos.
+
+---
+
+## 📂 Estructura del Proyecto (sugerida)
+
+```plaintext
+├── app/           # Directorio principal de rutas y páginas (App Router de Next.js)
+├── components/    # Componentes reutilizables de UI y formularios
+├── hooks/         # Hooks personalizados (formularios, lógica de negocio, API)
+├── lib/           # Utilidades: validaciones, mensajes de error, reglas, helpers
+├── mocks/         # Mocks para APIs y datos de prueba (ej. MSW)
+├── public/        # Archivos estáticos (imágenes, logos, fuentes, favicon, etc.)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Decisiones técnicas
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- Next.js en lugar de una aplicación de React simple (create-react-app)
+- React Query (@tanstack/react-query) para la gestión de estados asíncronos.
+- MSW para simular la API REST en el entorno de desarrollo.
+- localStorage para la Persistencia de Mocks
+- Tailwind CSS para la estilización y Shadcn UI como biblioteca de componentes.
+- Hooks personalizados, como useChatActions, para encapsular la lógica de las mutaciones.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Instalación y ejecución
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm install
+pnpm dev
+```
