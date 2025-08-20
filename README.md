@@ -73,9 +73,48 @@ La aplicación está construida con una arquitectura moderna basada en **Next.js
 - Tailwind CSS para la estilización y Shadcn UI como biblioteca de componentes.
 - Hooks personalizados, como useChatActions, para encapsular la lógica de las mutaciones.
 
-## Instalación y ejecución
+### ⚙️ Instalación
 
-```bash
-pnpm install
-pnpm dev
-```
+1.  Clona este repositorio en tu máquina:
+    ```bash
+    git clone [https://github.com/randol514/reto-tecnico-vooxell](https://github.com/randol514/reto-tecnico-vooxell)
+    ```
+2.  Navega al directorio del proyecto:
+    ```bash
+    cd reto-tecnico-vooxell
+    ```
+3.  Instala las dependencias del proyecto:
+    ```bash
+    pnpm install
+    ```
+
+---
+
+## 🔒 Variables de Entorno
+
+Este proyecto utiliza variables de entorno para gestionar la URL de la API.
+
+### Configuración
+
+1.  Copia el archivo de ejemplo para crear tu archivo local de configuración:
+    ```bash
+    cp .env.example .env.local
+    ```
+2.  Abre el nuevo archivo `.env.local` y **sustituye el valor de ejemplo** con la URL de tu API local.
+
+    ```
+    # Archivo: .env.local
+
+    NEXT_PUBLIC_API_URL=http://localhost:3000/api
+    ```
+
+**¡Importante!** El archivo `.env.example` solo contiene la variable sin valor. Tu archivo `.env.local` es el que debe tener la URL completa. Este último **es ignorado por Git** para proteger tu configuración local.
+
+---
+
+## 🏃 Ejecutando el Proyecto
+
+- **Modo desarrollo:**
+  ```bash
+  pnpm dev
+  ```
