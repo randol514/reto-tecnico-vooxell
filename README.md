@@ -77,7 +77,7 @@ La aplicación está construida con una arquitectura moderna basada en **Next.js
 
 1.  Clona este repositorio en tu máquina:
     ```bash
-    git clone [https://github.com/randol514/reto-tecnico-vooxell](https://github.com/randol514/reto-tecnico-vooxell)
+    git clone https://github.com/randol514/reto-tecnico-vooxell
     ```
 2.  Navega al directorio del proyecto:
     ```bash
